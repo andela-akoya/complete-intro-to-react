@@ -8,7 +8,14 @@ const showsObj = JSON.parse(buffer);
 const app = express();
 app.use(cors());
 const ratedShows = showsObj.shows.map(show =>
-  Object.assign({ rating: `${Math.floor(Math.random() * 9)}.${Math.floor(Math.random() * 9)}` }, show)
+  Object.assign(
+    {
+      rating: `${Math.floor(Math.random() * 9)}.${Math.floor(
+        Math.random() * 9
+      )}`
+    },
+    show
+  )
 );
 
 app.get('/:id', (req, res) => {

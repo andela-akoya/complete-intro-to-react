@@ -1,8 +1,10 @@
 {
   "scripts": {
     "api": "node ratingsAPI.js",
-    "format": "prettier --write --single-quote --print-width=80 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
-    "lint": "eslint **/*.{js,jsx} --quiet"
+    "build": "webpack",
+    "format": "prettier --write --single-quote --print-width=80 --parser=flow --tab-width=2 \"./**/*.{js,jsx}\"",
+    "lint": "eslint **/*.{js,jsx} --quiet",
+    "watch": "webpack --watch"
   },
   "dependencies": {
     "axios": "0.16.1",
@@ -62,9 +64,9 @@
   },
   "name": "complete-intro-to-react",
   "version": "3.0.0",
-  "description": "A Complete Intro to React workshop",
+  "description": "A Complete Intro to React",
   "main": "server.js",
-  "repository": "git@github.com:btholt/complete-intro-to-react.git",
-  "author": "Brian Holt <btholt@gmail.com>",
+  "repository": "https://github.com/andela-akoya/complete-intro-to-react.git",
+  "author": "Koya Gabriel <koyagabriel@gmail.com>",
   "license": "MIT"
 }
