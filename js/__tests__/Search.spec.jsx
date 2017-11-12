@@ -18,10 +18,11 @@ test('Search should render correct amount of shows based on search term', () => 
   const searchWord = 'black';
   const component = shallow(<Search />);
   component.find('input').simulate('change', { target: { value: searchWord } });
-  const showCount = preload.shows.filter(show =>
-    `${show.title} ${show.description}`
-      .toUpperCase()
-      .indexOf(searchWord.toUpperCase()) >= 0
+  const showCount = preload.shows.filter(
+    show =>
+      `${show.title} ${show.description}`
+        .toUpperCase()
+        .indexOf(searchWord.toUpperCase()) >= 0
   );
   expect(component.find(ShowCard).length).toEqual(showCount.length);
 });
