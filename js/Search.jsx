@@ -2,11 +2,14 @@
 
 import React, { Component } from 'react';
 import ShowCard from './ShowCard';
-import preload from '../data.json';
 
 class Search extends Component {
   state = {
     searchTerm: ''
+  };
+
+  props: {
+    shows: Array<Show>
   };
 
   handleSearchTermChange = (
@@ -28,7 +31,7 @@ class Search extends Component {
           />
         </header>
         <div>
-          {preload.shows
+          {this.props.shows
             .filter(
               show =>
                 `${show.title} ${show.description}`
