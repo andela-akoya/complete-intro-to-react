@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import ShowCard from './ShowCard';
+import Header from './Header';
 
 class Search extends Component {
   state = {
@@ -21,6 +22,11 @@ class Search extends Component {
   render() {
     return (
       <div className="search">
+        <Header
+          searchTerm={this.state.searchTerm}
+          showSearch
+          handleSearchTermChange={this.handleSearchTermChange}
+        />
         <header>
           <h1>svideo</h1>
           <input
