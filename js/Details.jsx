@@ -7,15 +7,16 @@ import Spinner from './Spinner';
 
 class Details extends React.Component {
   state = {
-    apiData: { rating: ''}
+    apiData: { rating: '' }
   };
 
-  componentDidMount () {
-    axios.get(`http://localhost:3000/${this.props.show.imdbID}`)
-      .then((response: {data: {rating: string}}) => {
-        this.setState({ apiData: response.data});
-      })
-  };
+  componentDidMount() {
+    axios
+      .get(`http://localhost:3000/${this.props.show.imdbID}`)
+      .then((response: { data: { rating: string } }) => {
+        this.setState({ apiData: response.data });
+      });
+  }
 
   props: {
     show: Show
@@ -23,8 +24,8 @@ class Details extends React.Component {
 
   render() {
     const { title, description, year, poster, trailer } = this.props.show;
-    const rating = this.state.apiData.rating
-    const ratingComponent = rating ? <h3>rating</h3> : <Spinner />
+    const rating = this.state.apiData.rating;
+    const ratingComponent = rating ? <h3>rating</h3> : <Spinner />;
     return (
       <div className="details">
         <Header />
@@ -50,6 +51,5 @@ class Details extends React.Component {
     );
   }
 }
-
 
 export default Details;
