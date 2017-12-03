@@ -4,7 +4,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import type { RouterHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { object } from 'prop-types';
 import { setSearchTerm } from './actionCreators';
 
 class Landing extends React.Component {
