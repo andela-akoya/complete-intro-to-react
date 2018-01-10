@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import ShowCard from './ShowCard';
 import Header from './Header';
 
-const Search = (props: { searchTerm: string, shows: Array<Show> }) => {
+function Search (props: { searchTerm: string, shows: Array<Show> }) {
+  const searchTerm = props.searchTerm.toUpperCase();
   return (
     <div className="search">
       <Header showSearch />
@@ -15,7 +16,7 @@ const Search = (props: { searchTerm: string, shows: Array<Show> }) => {
             show =>
               `${show.title} ${show.description}`
                 .toUpperCase()
-                .indexOf(props.searchTerm.toUpperCase()) >= 0
+                .indexOf(searchTerm) >= 0
           )
           .map(show => <ShowCard key={show.imdbID} {...show} />)}
       </div>
@@ -26,5 +27,5 @@ const Search = (props: { searchTerm: string, shows: Array<Show> }) => {
 const mapStateToProps = state => ({
   searchTerm: state.searchTerm
 });
-
+export const Unwrapped = Search;
 export default connect(mapStateToProps)(Search);

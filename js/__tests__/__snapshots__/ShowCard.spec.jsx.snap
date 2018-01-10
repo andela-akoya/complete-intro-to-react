@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ShowCard renders correctly 1`] = `
-<styled.div>
+<Styled(Link)
+  className="show-card"
+  to="/details/undefined"
+>
   <styled.img
     alt="undefined Show Poster"
     src="/public/img/posters/undefined"
@@ -14,5 +17,5 @@ exports[`ShowCard renders correctly 1`] = `
     </h4>
     <p />
   </div>
-</styled.div>
+</Styled(Link)>
 `;
